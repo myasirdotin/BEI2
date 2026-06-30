@@ -1,0 +1,23 @@
+@echo off
+echo ===============================
+echo Deleting Class-wise Users...
+echo ===============================
+
+REM Delete users for Classes 4 to 10
+for %%c in (4 5 6 7 8 9 10) do (
+
+    net user Class%%c_Red /delete
+    net user Class%%c_Green /delete
+    net user Class%%c_Blue /delete
+
+)
+
+REM Delete Groups (optional)
+net localgroup Red /delete
+net localgroup Green /delete
+net localgroup Blue /delete
+
+echo ===============================
+echo All class users deleted successfully!
+echo ===============================
+pause
